@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+l
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <title>CallDibs</title>
+
+    <link href="/styles.css" rel="stylesheet" th:href="@{/styles.css}">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="container">
+
+        <nav class="row">
+            <a class="logo" href="index.html" th:href="@{/}">
+            </a>
+            <span class="logo"></span>
+        </nav>
+
+        <div class="section">
+            <p class="label"></p>
+
+            <h1>
+                Skade- og udbedringsmedarbejder
+            </h1>
+
+            <p>
+                Velkommen. God arbejdslyst
+            </p>
+            </a>
+        </div>
+
+    </div>
+</header>
+
+<!-- HOVEDINDHOLD -->
+<main class="container section stack">
+
+    <div class="row">
+        <div>
+        </div>
+
+        <p class="text-muted text-small">
+        </p>
+    </div>
+
+    <div class="grid-3">
+
+        <!-- BOKS 1 -->
+        <article class="card">
+            <a class="text-small" href="#"> <!-- i stedet for # skal der skrives hvad den skal forbindes til men dette er ikke implementeret endnu -->
+                <img class="card-image bg-peach"
+                     src="/img/#"
+                     alt="Registrerr skade på bil">
+            </a>
+
+            <div class="card-body">
+                <h3 th:text=""></h3>
+                <h3>Registrer skade på bill</h3>
+            </div>
+        </article>
+
+
+
+        <!-- BOKS 2 -->
+        <article class="card">
+            <a class="text-small" href="#">
+                <img class="card-image bg-peach"
+                     src="/img/#"
+                     alt="Oversigt over biler der mangler at blive håndteret">
+            </a>
+
+            <div class="card-body">
+                <h3>Oversigt over biler der mangler at blive håndteret</h3>
+            </div>
+        </article>
+
+
+
+        <!-- BOKS 3 -->
+        <article class="card">
+            <a class="text-small" href="#">
+                <img class="card-image bg-peach"
+                     src="/img/#"
+                     alt="Yderligere information">
+            </a>
+
+            <div class="card-body">
+                <h3>Yderligere information</h3>
+            </div>
+        </article>
+
+
+    </div>
+
+
+</main>
+
+</body>
+
+</html>
+
