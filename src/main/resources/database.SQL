@@ -100,3 +100,4 @@ CREATE TABLE damage (
 
                         FOREIGN KEY (report_id)
                             REFERENCES damage_report (report_id)
+                    );
