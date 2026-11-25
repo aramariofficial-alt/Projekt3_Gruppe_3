@@ -2,14 +2,14 @@ package dk.kea.projekt3_gruppe_3.Model;
 
 public class Car {
     private int vehicleNumber;
-    private String chasisNumber;
+    private String chassisNumber;
     private String brand;
     private String model;
     private String status;
 
-    public Car(int vehicleNumber, String chasisNumber, String brand, String model, String status){
+    public Car(int vehicleNumber, String chassisNumber, String brand, String model, String status){
         this.vehicleNumber = vehicleNumber;
-        this.chasisNumber = chasisNumber;
+        this.chassisNumber = chassisNumber;
         this.brand = brand;
         this.model = model;
         this.status = status;
@@ -18,8 +18,8 @@ public class Car {
         return vehicleNumber;
     }
 
-    public String getChasisNumber() {
-        return chasisNumber;
+    public String getChassisNumber() {
+        return chassisNumber;
     }
 
     public String getBrand() {
@@ -43,7 +43,7 @@ public class Car {
     }
 
     public void setChasisNumber(String chasisNumber) {
-        this.chasisNumber = chasisNumber;
+        this.chassisNumber = chasisNumber;
     }
 
     public void setModel(String model) {
