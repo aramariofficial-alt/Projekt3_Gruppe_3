@@ -16,34 +16,16 @@ public class CarRepository {
 
     private final DataSource dataSource;
 
-    public CarRepository(DataSource dataSource) {
-        this.dataSource = dataSource;
-    }
+    public List<Car> getAllCars()
 
-    public List<Car> findByStatus(String status) {
-        List<Car> cars = new ArrayList<>();
-        String sql = "SELECT * FROM car WHERE status = ?";
+    public Car getCarById(int carId)
 
-        try (Connection connection = dataSource.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+    public void createCar(Car car)
 
-            preparedStatement.setString(1, status);
+    public void updateCar(Car car)
 
-            try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                while (resultSet.next()) {
-                    Car car = new Car(
-                            resultSet.getInt("vehicle_number"),
-                            resultSet.getString("chassis_number"),
-                            resultSet.getString("brand"),
-                            resultSet.getString("model"),
-                            resultSet.getString("status"));
-                    cars.add(car);
-                }
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException("Kunne ikke hente biler", e);
-        }
+    public void deleteCar(int carId)
 
-        return cars;
-    }
-}
+    public List<Car> getCarsByStatus(CarStatus status)
+
+    public void updateCarStatus(int carId, CarStatus status)
