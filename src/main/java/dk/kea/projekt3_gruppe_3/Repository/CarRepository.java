@@ -16,16 +16,18 @@ public class CarRepository {
 
     private final DataSource dataSource;
 
-    public List<Car> getAllCars()
+    public List<Car> findAll()
 
-    public Car getCarById(int carId)
+    public Car findById(int vehicleNumber)
 
-    public void createCar(Car car)
+    public void save(Car car)
 
-    public void updateCar(Car car)
+    public List<Car> findByStatus(CarStatus status)
 
-    public void deleteCar(int carId)
+    public void updateStatus(int vehicleNumber, CarStatus status)
 
-    public List<Car> getCarsByStatus(CarStatus status)
+    public boolean existsByVehicleNumber(int vehicleNumber)
 
-    public void updateCarStatus(int carId, CarStatus status)
+    public boolean existsByChassisNumber(String chassisNumber)
+
+    public boolean updateStatusIfAvailable(int vehicleNumber)
