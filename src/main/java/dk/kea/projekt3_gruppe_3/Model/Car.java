@@ -14,24 +14,29 @@ public class Car {
         this.model = model;
         this.status = status;
     }
-    public int getVehicleNumber() {
-        return vehicleNumber;
+
+    public Car() {
+
     }
 
-    public String getChassisNumber() {
-        return chassisNumber;
+    public int getVehicleNumber(int vehicleNumber) {
+        return this.vehicleNumber;
     }
 
-    public String getBrand() {
-        return brand;
+    public String getChassisNumber(String chassisNumber) {
+        return this.chassisNumber;
     }
 
-    public String getModel() {
-        return model;
+    public String getBrand(String brand) {
+        return this.brand;
     }
 
-    public String getStatus() {
-        return status;
+    public String getModel(int model) {
+        return this.model;
+    }
+
+    public String getStatus(String status) {
+        return this.status;
     }
 
     public void setVehicleNumber(int vehicleNumber) {

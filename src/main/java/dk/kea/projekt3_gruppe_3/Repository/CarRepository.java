@@ -18,7 +18,33 @@ public class CarRepository {
 
     public List<Car> findAll()
 
-    public Car findById(int vehicleNumber)
+    public Car findById(int vehicleNumber) {
+        String sql = "SELECT * FROM wish WHERE id = ?";
+        Car car = null;
+
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+
+            statement.setInt(1, vehicleNumber);
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    car = new Car();
+                    car.getVehicleNumber(resultSet.getInt("vehicleNumber"));
+                    car.getChassisNumber(resultSet.getString("chassisNumber"));
+                    car.getBrand(resultSet.getString("brand"));
+                    car.getModel(resultSet.getInt("model"));
+                    car.getStatus(resultSet.getString("status"))
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Error finding car by id");
+            e.printStackTrace();
+        }
+
+        return car; // Returnerer bil, eller null hvis det ikke blev fundet
+    }
+
 
     public void save(Car car)
 
