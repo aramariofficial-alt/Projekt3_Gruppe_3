@@ -5,9 +5,9 @@ public class Car {
     private String chassisNumber;
     private String brand;
     private String model;
-    private String status;
+    private CarStatus status;
 
-    public Car(int vehicleNumber, String chassisNumber, String brand, String model, String status){
+    public Car(int vehicleNumber, String chassisNumber, String brand, String model, CarStatus status){
         this.vehicleNumber = vehicleNumber;
         this.chassisNumber = chassisNumber;
         this.brand = brand;
@@ -19,24 +19,23 @@ public class Car {
 
     }
 
-
-    public int getVehicleNumber(int vehicleNumber) {
+    public int getVehicleNumber() {
         return this.vehicleNumber;
     }
 
-    public String getChassisNumber(String chassisNumber) {
+    public String getChassisNumber() {
         return this.chassisNumber;
     }
 
-    public String getBrand(String brand) {
+    public String getBrand() {
         return this.brand;
     }
 
-    public String getModel(int model) {
+    public String getModel() {
         return this.model;
     }
 
-    public String getStatus(String status) {
+    public CarStatus getStatus() {
         return this.status;
     }
 
@@ -56,7 +55,11 @@ public class Car {
         this.model = model;
     }
 
-    public void setStatus(String status) {
+    public boolean isAvailable() {
+        return status == CarStatus.AVAILABLE;
+    }
+
+    public void setStatus(CarStatus status) {
         this.status = status;
     }
 
