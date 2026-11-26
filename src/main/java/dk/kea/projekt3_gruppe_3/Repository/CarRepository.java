@@ -34,7 +34,7 @@ public class CarRepository {
                     car.getChassisNumber(resultSet.getString("chassisNumber"));
                     car.getBrand(resultSet.getString("brand"));
                     car.getModel(resultSet.getInt("model"));
-                    car.getStatus(resultSet.getString("status"))
+                    car.getStatus(resultSet.getString("status"));
                 }
             }
         } catch (SQLException e) {
