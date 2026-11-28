@@ -101,3 +101,20 @@ CREATE TABLE damage (
                         FOREIGN KEY (report_id)
                             REFERENCES damage_report (report_id)
                     );
+
+
+-- ---------------------------------------------------------------------
+-- Adgang for applikationens bruger F26A (password 1234)
+--
+-- Scriptet sletter IKKE en eksisterende F26A-bruger. Det opretter kun
+-- brugeren, hvis den mangler, og giver adgang til denne database.
+-- MySQL skelner mellem 'F26A'@'localhost' og 'F26A'@'%', og appen logger
+-- ind som localhost-brugeren, hvis den findes. Derfor dækkes begge.
+-- Kræver at scriptet køres som root.
+-- ---------------------------------------------------------------------
+CREATE USER IF NOT EXISTS 'F26A'@'localhost' IDENTIFIED BY '1234';
+CREATE USER IF NOT EXISTS 'F26A'@'%' IDENTIFIED BY '1234';
+
+GRANT ALL PRIVILEGES ON projekt3_gruppe_3_db.* TO 'F26A'@'localhost';
+GRANT ALL PRIVILEGES ON projekt3_gruppe_3_db.* TO 'F26A'@'%';
+FLUSH PRIVILEGES;
