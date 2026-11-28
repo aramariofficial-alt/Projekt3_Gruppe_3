@@ -20,6 +20,8 @@ public class DashboardController {
     public String showDashboard(Model model){
         Map<CarStatus, Integer> carCountByStatus = dashboardService.countCarsByStatus();
         model.addAttribute("carCountByStatus",carCountByStatus);
+        int totalCars = dashboardService.countTotalCars();
+        model.addAttribute("totalCars",totalCars);
         return "businessEmployee";
     }
 }

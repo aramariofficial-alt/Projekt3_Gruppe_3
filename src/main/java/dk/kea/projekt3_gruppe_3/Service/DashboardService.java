@@ -28,4 +28,9 @@ public class DashboardService {
 
         return carCountByStatus;
     }
+
+    public int countTotalCars(){
+        List<Car> cars = carRepository.findAll();
+        return cars.size();
+    }
 }
