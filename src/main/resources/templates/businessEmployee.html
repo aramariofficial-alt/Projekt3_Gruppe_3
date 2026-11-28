@@ -40,6 +40,49 @@
 
 <!-- HOVEDINDHOLD -->
 <main class="container section stack">
+
+    <!-- STATISTIKFELTER -->
+    <!-- .grid-4 i styles.css har kun 3 kolonner, derfor 4 kolonner her -->
+    <div class="grid-4" style="grid-template-columns: repeat(4, minmax(0, 1fr));">
+
+        <!-- US12: beregnes i sprint 2 -->
+        <article class="card">
+            <div class="card-body">
+                <p class="label text-muted">Udlejede biler</p>
+                <h3>–</h3>
+                <p class="text-small text-muted">Kommer i sprint 2</p>
+            </div>
+        </article>
+
+        <!-- US13: beregnes i sprint 3 -->
+        <article class="card">
+            <div class="card-body">
+                <p class="label text-muted">Samlet pris</p>
+                <h3>–</h3>
+                <p class="text-small text-muted">Kommer i sprint 3</p>
+            </div>
+        </article>
+
+        <!-- US14: antal biler i alt -->
+        <article class="card">
+            <div class="card-body">
+                <p class="label text-muted">Bilbestand</p>
+                <h3 th:text="${totalCars}">0</h3>
+                <p class="text-small text-muted">Biler i alt</p>
+            </div>
+        </article>
+
+        <!-- US15: beregnes i sprint 4 -->
+        <article class="card">
+            <div class="card-body">
+                <p class="label text-muted">Forventede tilbageleveringer</p>
+                <h3>–</h3>
+                <p class="text-small text-muted">Kommer i sprint 4</p>
+            </div>
+        </article>
+
+    </div>
+
     <h2>Bilbestand fordelt på status</h2>
     <table>
         <thead>
