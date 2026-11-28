@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-l
+
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
@@ -8,7 +8,7 @@ l
 
     <title>CallDibs</title>
 
-    <link href="../styles.css" rel="stylesheet" th:href="@{/styles.css}">
+    <link href="../static/styles.css" rel="stylesheet" th:href="@{/styles.css}">
 </head>
 
 <body>
@@ -33,7 +33,6 @@ l
             <p>
                 Velkommen. God arbejdslyst
             </p>
-            </a>
         </div>
 
     </div>
@@ -41,65 +40,21 @@ l
 
 <!-- HOVEDINDHOLD -->
 <main class="container section stack">
-
-    <div class="row">
-        <div>
-        </div>
-
-        <p class="text-muted text-small">
-        </p>
-    </div>
-
-    <div class="grid-4">
-
-        <!-- BOKS 1 -->
-        <article class="card">
-            <a class="text-small" href="#"> <!-- i stedet for # skal der skrives hvad den skal forbindes til men dette er ikke implementeret endnu -->
-                <img class="card-image bg-peach"
-                     src="/img/#"
-                     alt="Oversigt over biler der er udlejet og samlet indtægt">
-            </a>
-
-            <div class="card-body">
-                <h3 th:text=""></h3>
-                <h3>Oversigt over biler der er udlejet og samlet indtægt</h3>
-            </div>
-        </article>
-
-
-
-        <!-- BOKS 2 -->
-        <article class="card">
-            <a class="text-small" href="#">
-                <img class="card-image bg-peach"
-                     src="/img/#"
-                     alt="Oversigt over alle biler">
-            </a>
-
-            <div class="card-body">
-                <h3>Oversigt over alle biler</h3>
-            </div>
-        </article>
-
-
-
-        <!-- BOKS 3 -->
-        <article class="card">
-            <a class="text-small" href="#">
-                <img class="card-image bg-peach"
-                     src="/img/#"
-                     alt="Oversigt over bilers tilbageleverings-dato">
-            </a>
-
-            <div class="card-body">
-                <h3>Oversigt over bilers tilbageleverings-dato</h3>
-            </div>
-        </article>
-
-
-
-    </div>
-
+    <h2>Bilbestand fordelt på status</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Status</th>
+            <th>Antal</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="entry : ${carCountByStatus}">
+            <td th:text="${entry.key}"></td>
+            <td th:text="${entry.value}"></td>
+        </tr>
+        </tbody>
+    </table>
 
 </main>
 
